@@ -4,11 +4,16 @@ build-backend = "maturin"
 
 [project]
 name = "qiskit_qrmi"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: Apache Software License",
 ]
 
 dependencies = [
@@ -17,8 +22,27 @@ dependencies = [
     "qiskit-pasqal-provider>=0.1.1",
     "pulser>=1.5.3",
 ]
-
+authors = [
+  {email = "qiskit@us.ibm.com"},
+  {name = "IBM, Pasqal SAS and UKRI-STFC (Hartree Centre)"}
+]
+license = {file = "LICENSE"}
+readme = "README.md"
+description = "Quantum Resource Management Interface(QRMI)"
+description_content_type = "text/markdown"
+keywords = [
+    "quantum-computing",
+    "quantum-programming-language",
+    "qiskit",
+    "pulser",
+    "slurm",
+    "slurm-job-scheduler",
+    "slurm-workload-manager",
+    "python",
+    "rust"
+]
 dynamic = ["version"]
+
 [project.optional-dependencies]
 tests = [
     "pytest",
@@ -26,3 +50,7 @@ tests = [
 [tool.maturin]
 python-source = "python"
 features = ["pyo3/extension-module", "python"]
+
+[project.urls]
+repository = "https://github.com/qiskit/qrmi.git"
+Changelog = "https://github.com/qiskit/qrmi/blob/master/CHANGELOG.md"
