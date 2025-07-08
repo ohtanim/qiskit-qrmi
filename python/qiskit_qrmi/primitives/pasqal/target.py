@@ -21,10 +21,9 @@ import pulser
 import pulser.abstract_repr
 from dotenv import load_dotenv
 from pulser.devices import Device
-from pulser_qrmi_backend.service import QRMIService
 from qiskit.transpiler.target import Target
-
-from qrmi import QuantumResource
+from qiskit_qrmi import QuantumResource
+from qiskit_qrmi.pulser_backend.service import QRMIService
 
 
 def get_device(qrmi: QuantumResource) -> Device:
@@ -46,11 +45,6 @@ def get_target(qrmi: QuantumResource) -> Target:
 
 
 if __name__ == "__main__":
-    import random
-
-    from dotenv import load_dotenv
-    from qrmi_primitives import QRMIService
-
     # Create QRMI
     load_dotenv()
     service = QRMIService()
