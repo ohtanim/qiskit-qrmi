@@ -1,0 +1,28 @@
+[build-system]
+requires = ["maturin>=1.9,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "qiskit_qrmi"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+dependencies = [
+    "qiskit_ibm_runtime>=0.30.0",
+    "qiskit_qasm3_import",
+    "qiskit-pasqal-provider>=0.1.1",
+    "pulser>=1.5.3",
+]
+
+dynamic = ["version"]
+[project.optional-dependencies]
+tests = [
+    "pytest",
+]
+[tool.maturin]
+python-source = "python"
+features = ["pyo3/extension-module", "python"]

@@ -1,0 +1,55 @@
+[package]
+name = "qiskit_qrmi"
+version = "0.5.2"
+edition = "2021"
+license = "Apache-2.0"
+description = "Quantum Resource Management Interface(QRMI)"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "qiskit_qrmi"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[dependencies]
+retry-policies = "0.4.0"
+tokio = { version = "1.40.0", features = ["full"] }
+env_logger = "0.11.5"
+serde_json = "1.0"
+libc = "0.2.169"
+futures = "0.3.31"
+clap = { version = "4.5.29", features = ["derive"] }
+uuid = "1.16.0"
+log = "0.4.26"
+direct-access-api = { path = "dependencies/direct_access_client" }
+qiskit_runtime_client = { path = "dependencies/qiskit_runtime_client" }
+pasqal-cloud-api = { path = "dependencies/pasqal_cloud_client" }
+anyhow = { version = "1.0.97", features = ["backtrace"] }
+pyo3 = { version = "0.25.0", features = ["extension-module"], optional = true }
+ffi_helpers = "0.3.0"
+async-trait = "0.1.88"
+
+[build-dependencies]
+cbindgen = "0.26"
+
+[features]
+default = []
+python = ["dep:pyo3"]
+
+[workspace]
+members = [
+    "dependencies/direct_access_client",
+    "dependencies/qiskit_runtime_client",
+    "dependencies/pasqal_cloud_client",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/qiskit-community/spank-plugins"
+rust-version = "1.85.1" # Keep in sync with docs/client/*.md and rust-toolchain.toml.
+
+[workspace.dependencies]
+direct-access-api = { path = "dependencies/direct_access_client" }
+pasqal-cloud-api = { path = "dependencies/pasqal_cloud_client" }
