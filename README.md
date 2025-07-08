@@ -151,6 +151,8 @@ We encourage your feedback! You can share your thoughts with us by:
 - [Opening an issue](https://github.com/qiskit/qiskit/issues) in the repository
 
 
+----------------------------------------------------------------------------------------------------
+
 ### How to Cite This Work
 
 If you use the “Quantum Spank plugin” in your research or projects, please consider citing the associated overview paper  [Quantum resources in resource management systems](https://arxiv.org/abs/2506.10052).
