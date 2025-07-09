@@ -14,7 +14,7 @@
 
 """Pulser Device creation"""
 
-# pylint: disable=invalid-name
+# pylint: disable=invalid-name, no-name-in-module
 import random
 
 import pulser

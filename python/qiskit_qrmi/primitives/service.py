@@ -16,6 +16,7 @@ import os
 from logging import getLogger
 from typing import List
 
+# pylint: disable=no-name-in-module
 from qiskit_qrmi import QuantumResource, ResourceType
 
 logger = getLogger("qrmi")

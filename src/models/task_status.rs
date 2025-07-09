@@ -12,9 +12,11 @@
 
 #[cfg(feature = "python")]
 use pyo3::prelude::*;
+use pyo3_stub_gen::{define_stub_info_gatherer, derive::*};
 
 /// Task statuses.
 #[repr(C)]
+#[gen_stub_pyclass_enum]
 #[cfg_attr(feature = "python", pyclass(eq, eq_int, hash, frozen))]
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
 pub enum TaskStatus {
@@ -29,3 +31,5 @@ pub enum TaskStatus {
     /// Task was cancelled
     Cancelled,
 }
+
+define_stub_info_gatherer!(stub_info);

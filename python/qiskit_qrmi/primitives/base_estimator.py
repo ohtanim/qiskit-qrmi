@@ -14,13 +14,13 @@
 
 """Estimator V2 base class for IBM QRMI"""
 import json
-from typing import Union
 from dataclasses import dataclass, field
 from collections.abc import Iterable
 from qiskit import qasm3
 from qiskit.primitives.base import BaseEstimatorV2
 from qiskit.primitives.containers.estimator_pub import EstimatorPub, EstimatorPubLike
 
+# pylint: disable=no-name-in-module
 from qiskit_qrmi import QuantumResource, Payload
 
 from .runtime_job_v2 import RuntimeJobV2

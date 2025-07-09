@@ -24,6 +24,7 @@ from qiskit_pasqal_provider.providers.pulse_utils import (
     get_register_from_circuit,
 )
 
+# pylint: disable=no-name-in-module
 from qiskit_qrmi import Payload, QuantumResource, TaskStatus
 
 

@@ -49,7 +49,7 @@ tests = [
 ]
 [tool.maturin]
 python-source = "python"
-features = ["pyo3/extension-module", "python"]
+features = ["pyo3/extension-module", "pyo3/abi3", "python"]
 
 [project.urls]
 repository = "https://github.com/qiskit/qrmi.git"

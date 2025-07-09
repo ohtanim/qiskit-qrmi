@@ -9,20 +9,16 @@
 // Any modifications or derivative works of this code must retain this
 // copyright notice, and modified files need to carry a notice indicating
 // that they have been altered from the originals.
+//
+use pyo3_stub_gen::Result;
 
-#[cfg(feature = "python")]
-use pyo3::prelude::*;
-use pyo3_stub_gen::{define_stub_info_gatherer, derive::*};
-
-/// Task Payload
-#[derive(Debug, Clone, PartialEq)]
-#[gen_stub_pyclass_enum]
-#[cfg_attr(feature = "python", pyclass)]
-pub enum Payload {
-    /// Payload that contains Qiskit Primitive input.
-    QiskitPrimitive { input: String, program_id: String },
-    /// Payload for Pasqal Cloud
-    PasqalCloud { sequence: String, job_runs: i32 },
+fn main() -> Result<()> {
+    env_logger::Builder::from_env(env_logger::Env::default().filter_or("RUST_LOG", "info")).init();
+    #[cfg(feature = "python")]
+    {
+        use qiskit_qrmi::pyext;
+        let stub = pyext::stub_info()?;
+        stub.generate()?;
+    }
+    Ok(())
 }
-
-define_stub_info_gatherer!(stub_info);

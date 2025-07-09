@@ -11,7 +11,7 @@
 # that they have been altered from the originals.
 
 """EstimatorV2 Primitive implementation with IBM QRMI"""
-from typing import Union
+# pylint: disable=no-name-in-module
 from qiskit_qrmi import QuantumResource
 from qiskit_qrmi.primitives import QRMIBaseEstimatorV2
 

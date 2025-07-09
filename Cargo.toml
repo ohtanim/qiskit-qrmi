@@ -26,6 +26,7 @@ qiskit_runtime_client = { path = "dependencies/qiskit_runtime_client" }
 pasqal-cloud-api = { path = "dependencies/pasqal_cloud_client" }
 anyhow = { version = "1.0.97", features = ["backtrace"] }
 pyo3 = { version = "0.25.0", features = ["extension-module"], optional = true }
+pyo3-stub-gen = "0.10.0"
 ffi_helpers = "0.3.0"
 async-trait = "0.1.88"
 
@@ -53,3 +54,7 @@ rust-version = "1.85.1" # Keep in sync with docs/client/*.md and rust-toolchain.
 [workspace.dependencies]
 direct-access-api = { path = "dependencies/direct_access_client" }
 pasqal-cloud-api = { path = "dependencies/pasqal_cloud_client" }
+
+[[bin]]
+name = "stub_gen"
+doc = false

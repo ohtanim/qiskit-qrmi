@@ -15,11 +15,11 @@
 """Runtime job"""
 
 import time
-from typing import Union
 from qiskit_ibm_runtime.utils.result_decoder import ResultDecoder
 from qiskit.primitives import BasePrimitiveJob, PrimitiveResult
 from qiskit.providers import JobStatus
 from qiskit.providers.jobstatus import JOB_FINAL_STATES
+# pylint: disable=no-name-in-module
 from qiskit_qrmi import QuantumResource, TaskStatus
 
 STATUS_MAP = {
