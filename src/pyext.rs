@@ -28,6 +28,7 @@ pub enum ResourceType {
     PasqalCloud,
 }
 
+/// Quantum Resource
 #[gen_stub_pyclass]
 #[pyclass]
 #[pyo3(name = "QuantumResource")]
@@ -36,7 +37,6 @@ pub struct PyQuantumResource {
     rt: Runtime,
 }
 
-/// Quantum Resource
 #[gen_stub_pymethods]
 #[pymethods]
 impl PyQuantumResource {

@@ -5,6 +5,9 @@ import builtins
 from enum import Enum
 
 class QuantumResource:
+    r"""
+    Quantum Resource
+    """
     def __new__(cls, resource_id:builtins.str, resource_type:ResourceType) -> QuantumResource:
         r"""
         Construct a QuantumResource instance
@@ -23,7 +26,7 @@ class QuantumResource:
         
         # Arguments
         
-        * `id`: acquisition token obtained by previous [`acquire()`](crate::QuantumResource::acquire) call.
+        * `id`: acquisition token obtained by previous acquire() call.
         """
     def task_start(self, payload:Payload) -> builtins.str:
         r"""
@@ -36,6 +39,10 @@ class QuantumResource:
     def task_stop(self, task_id:builtins.str) -> None:
         r"""
         Stops the task specified by `task_id`. This function is called if the user cancels the job or if the time limit for job execution is exceeded. The implementation must cancel the task if it is still running.
+        
+        # Arguments
+        
+        * `task_id`: Identifier of the task to be stopped.
         """
     def task_status(self, task_id:builtins.str) -> TaskStatus:
         r"""

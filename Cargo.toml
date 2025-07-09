@@ -30,6 +30,10 @@ pyo3-stub-gen = "0.10.0"
 ffi_helpers = "0.3.0"
 async-trait = "0.1.88"
 
+[dev-dependencies]
+clap = { version = "4.5.20", features = ["derive"] }
+dotenv = "0.15.0"
+
 [build-dependencies]
 cbindgen = "0.26"
 
@@ -42,6 +46,7 @@ members = [
     "dependencies/direct_access_client",
     "dependencies/qiskit_runtime_client",
     "dependencies/pasqal_cloud_client",
+    "bin/task_runner",
 ]
 resolver = "2"
 
@@ -54,7 +59,20 @@ rust-version = "1.85.1" # Keep in sync with docs/client/*.md and rust-toolchain.
 [workspace.dependencies]
 direct-access-api = { path = "dependencies/direct_access_client" }
 pasqal-cloud-api = { path = "dependencies/pasqal_cloud_client" }
+qiskit_qrmi = { path = "." }
 
 [[bin]]
 name = "stub_gen"
 doc = false
+
+[[example]]
+name = "qrmi-example-qiskit_runtime_service"
+path = "examples/qrmi/rust/qiskit_runtime_service/src/main.rs"
+
+[[example]]
+name = "qrmi-example-direct_access"
+path = "examples/qrmi/rust/direct_access/src/main.rs"
+
+[[example]]
+name = "qrmi-example-pasqal_cloud"
+path = "examples/qrmi/rust/pasqal_cloud/src/main.rs"
